@@ -1,0 +1,4 @@
+repository "fizik_proje@DTBC@cloud"
+  path "/"
+    br "/main"
+    co "/main"
