@@ -26,7 +26,11 @@ public class drag : MonoBehaviour
         if (dragging && mode_script.current_mode == object_mode.Modes.MoveObject)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-        }    
+        }
+        if (dragging)
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     private void OnMouseDown()
@@ -38,7 +42,6 @@ public class drag : MonoBehaviour
     private void OnMouseUp()
     {
         dragging = false;
-        rb.velocity = Vector3.zero;   
     }
 
 }

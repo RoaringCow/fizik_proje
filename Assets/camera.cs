@@ -21,15 +21,16 @@ public class camera : MonoBehaviour
         {
             dragging = true;
             drag_start = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log(drag_start);
         }
-        else
+        else if (Input.GetMouseButtonUp(0))
         {
             dragging = false;
         }
         if (dragging && mode_script.current_mode == object_mode.Modes.MoveCamera)
         {
-            Vector3 current_camera_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = drag_start + (drag_start - current_camera_pos);
+            Vector3 current_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.Translate(new Vector3((current_pos.x - drag_start.x) * -1, (current_pos.y - drag_start.y) * -1, (current_pos.z - drag_start.z) * -1));
         }
     }
 }
