@@ -22,16 +22,6 @@ public class speed_controller : MonoBehaviour
         ball_rb = ball.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log("-----------------");
-        Debug.Log(speed_x.text);
-        Debug.Log(speed_y.text);
-        Debug.Log(add_set_state);
-        Debug.Log(ball_rb.velocity);
-            
-    }
 
 
     public void SubmitSpeed()
