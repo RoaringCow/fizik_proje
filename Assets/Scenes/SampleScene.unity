@@ -474,7 +474,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &86454734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,12 +538,13 @@ MonoBehaviour:
   arrow_tip_y: {fileID: 267374514}
   arrow_y: {fileID: 1908883754}
   _object: {fileID: 86454729}
-  speed_x: {fileID: 1829107525}
-  speed_y: {fileID: 1635890270}
+  input_speed_x_object: {fileID: 1829107523}
+  input_speed_y_object: {fileID: 1635890268}
   arrowX_renderer: {fileID: 387880659}
   arrowHeadX_renderer: {fileID: 1913908673}
   arrowHeadY_renderer: {fileID: 267374515}
   arrowY_renderer: {fileID: 1908883756}
+  speed: {fileID: 86454732}
 --- !u!1 &93978325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,7 +5116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1908883757}
   - component: {fileID: 1908883756}
-  - component: {fileID: 1908883755}
   m_Layer: 6
   m_Name: arrow_y
   m_TagString: Untagged
@@ -5123,29 +5123,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1908883755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908883754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d4fbb4fa8bd43e41991fc2a44b44c68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrow_x: {fileID: 1908883754}
-  arrow_tip_x: {fileID: 1913908672}
-  arrow_tip_y: {fileID: 267374514}
-  arrow_y: {fileID: 1908883754}
-  _object: {fileID: 86454729}
-  speed_x: {fileID: 1829107525}
-  speed_y: {fileID: 1635890270}
-  arrowX_renderer: {fileID: 0}
-  arrowHeadX_renderer: {fileID: 0}
-  arrowHeadY_renderer: {fileID: 0}
-  arrowY_renderer: {fileID: 0}
 --- !u!212 &1908883756
 SpriteRenderer:
   m_ObjectHideFlags: 0
