@@ -30,47 +30,30 @@ public class Arrows : MonoBehaviour
         }
         arrow_x.transform.localScale = new Vector2(Mathf.Abs(new_speed_x / 5), 0.2f);
         arrow_y.transform.localScale = new Vector2(0.2f, Mathf.Abs(new_speed_y / 5));
-        if (new_speed_x > 0)
+
+
+        int x_direction = (new_speed_x > 0) ? 1 : -1;
+        int y_direction = (new_speed_y > 0) ? 1 : -1;
+        if (new_speed_x != 0)
         {
-            arrow_tip_x.transform.localScale = new Vector2(0.4f,0.4f);
-            arrow_x.transform.localPosition = new Vector2(arrow_x.transform.localScale.x / 2 + 1, 0);
-            arrow_tip_x.transform.localPosition = new Vector2(arrow_x.transform.localScale.x + 1, 0);
-        }
-        else if(new_speed_x< 0)
-        {
-            arrow_tip_x.transform.localScale = new Vector2(0.4f, -0.4f);
-            arrow_x.transform.localPosition = new Vector2((arrow_x.transform.localScale.x * -1) / 2 - 1, 0);
-            arrow_tip_x.transform.localPosition = new Vector2((arrow_x.transform.localScale.x * -1) - 1, 0);
-        }
-        else
-        {
+            arrow_tip_x.transform.localScale = new Vector2(0.4f, 0.4f * x_direction);
+        }else {
             arrow_tip_x.transform.localScale = Vector2.zero;
         }
 
-
-        if (new_speed_y > 0)
+        if (new_speed_y != 0)
         {
-            arrow_tip_y.transform.localScale = new Vector2(0.4f, 0.4f);
-            arrow_y.transform.localPosition = new Vector2(0, arrow_y.transform.localScale.y / 2 + 1);
-            arrow_tip_y.transform.localPosition = new Vector2(0, arrow_y.transform.localScale.y + 1);
-        }
-        else if (new_speed_y < 0)
-        {
-            arrow_tip_y.transform.localScale = new Vector2(0.4f,- 0.4f);
-            arrow_y.transform.localPosition = new Vector2(0,(arrow_y.transform.localScale.y * -1) / 2 - 1);
-            arrow_tip_y.transform.localPosition = new Vector2(0, (arrow_y.transform.localScale.y * -1) - 1);
-        }
-        else
+            arrow_tip_y.transform.localScale = new Vector2(0.4f, 0.4f * y_direction);
+        }else
         {
             arrow_tip_y.transform.localScale = Vector2.zero;
         }
+
+        arrow_x.transform.localPosition = new Vector2(arrow_x.transform.localScale.x / 2 * x_direction, 0);
+        arrow_tip_x.transform.localPosition = new Vector2(arrow_x.transform.localScale.x * x_direction, 0);
+
+        arrow_y.transform.localPosition = new Vector2(0, arrow_y.transform.localScale.y / 2 * y_direction);
+        arrow_tip_y.transform.localPosition = new Vector2(0, arrow_y.transform.localScale.y * y_direction);
     }
 
 }
-//arrow_x.transform.localScale = new Vector2(float.Parse(speed_x.text) / 5,0.2f);
-//arrow_x.transform.localPosition = new Vector2(arrow_x.transform.localScale.x / 2 + 1,0);
-//arrow_tip_x.transform.localPosition = new Vector2(arrow_x.transform.localScale.x + 1 , 0);
-
-//arrow_y.transform.localScale = new Vector2(0.2f, float.Parse(speed_y.text) / 5);
-//arrow_y.transform.localPosition = new Vector2(0, arrow_y.transform.localScale.y / 2 + 1);
-//arrow_tip_y.transform.localPosition = new Vector2(0, arrow_y.transform.localScale.y + 1);
