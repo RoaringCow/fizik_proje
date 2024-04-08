@@ -21,7 +21,7 @@ public class keypad_controller : MonoBehaviour
     }
 
 
-    public void Toggle()
+    public void Switch()
     {
         if (toggle)
         {
@@ -44,10 +44,10 @@ public class keypad_controller : MonoBehaviour
                 speed_input_x.text = speed_input_x.text.Remove(speed_input_x.text.Length - 1);
                 break;
             case Input_mode.InputY:
-                speed_input_y.text += speed_input_y.text.Remove(speed_input_y.text.Length - 1);
+                speed_input_y.text = speed_input_y.text.Remove(speed_input_y.text.Length - 1);
                 break;
             case Input_mode.Gravity:
-                gravity_input.text += gravity_input.text.Remove(gravity_input.text.Length - 1);
+                gravity_input.text = gravity_input.text.Remove(gravity_input.text.Length - 1);
                 break;
         }
     }

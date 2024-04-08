@@ -287,7 +287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 86454736}
-  - component: {fileID: 86454735}
+  - component: {fileID: 86454738}
   - component: {fileID: 86454734}
   - component: {fileID: 86454732}
   - component: {fileID: 86454731}
@@ -488,18 +488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 86454732}
---- !u!114 &86454735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86454729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec1331ca48b004d558ffb8bad74b411f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &86454736
 Transform:
   m_ObjectHideFlags: 0
@@ -545,6 +533,19 @@ MonoBehaviour:
   arrowHeadY_renderer: {fileID: 267374515}
   arrowY_renderer: {fileID: 1908883756}
   speed: {fileID: 86454732}
+--- !u!114 &86454738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86454729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857aa898dbe49442abc4b82a7efa435e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dot_prefab: {fileID: 471945106306745623, guid: 3ddbe96a777494296a5f9916a8dc9bef, type: 3}
 --- !u!1 &93978325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1232,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194872768}
   m_CullTransparentMesh: 1
+--- !u!1 &263628903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263628904}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &263628904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263628903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.485, y: -15.012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &267374514
 GameObject:
   m_ObjectHideFlags: 0
@@ -6519,8 +6551,8 @@ Transform:
   m_GameObject: {fileID: 1150126115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1411.2163, y: -22.9129, z: 0.13826182}
-  m_LocalScale: {x: 2900, y: 5.439, z: 1}
+  m_LocalPosition: {x: 1411.2163, y: -23, z: 0.13826182}
+  m_LocalScale: {x: 2900, y: 5.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 535307099}
@@ -8353,7 +8385,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1489436963}
         m_TargetAssemblyTypeName: keypad_controller, Assembly-CSharp
-        m_MethodName: Toggle
+        m_MethodName: Switch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8363,7 +8395,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1704071914
 GameObject:
   m_ObjectHideFlags: 0
@@ -10726,3 +10758,4 @@ SceneRoots:
   - {fileID: 1260374136}
   - {fileID: 86454736}
   - {fileID: 535307099}
+  - {fileID: 263628904}

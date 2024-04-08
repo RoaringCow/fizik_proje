@@ -14,6 +14,7 @@ public class speed_controller : MonoBehaviour
     Rigidbody2D ball_rb;
 
 
+
     // long ass name
     public GameObject current_speed_x_object;
     public GameObject current_speed_y_object;
@@ -29,6 +30,7 @@ public class speed_controller : MonoBehaviour
         current_speed_x_text = current_speed_x_object.GetComponent<TMP_Text>();
         current_speed_y_text = current_speed_y_object.GetComponent<TMP_Text>();
         ball_rb = ball.GetComponent<Rigidbody2D>();
+
     }
 
     private void Update()
@@ -59,6 +61,7 @@ public class speed_controller : MonoBehaviour
             Vector2 current_speed = ball_rb.velocity;
             ball_rb.velocity = current_speed + new Vector2(new_speed_x, new_speed_y);
         }
+
         speed_x.text = "";
         speed_y.text = "";
     }
@@ -77,4 +80,5 @@ public class speed_controller : MonoBehaviour
         Add,
         Set,
     };
+
 }
