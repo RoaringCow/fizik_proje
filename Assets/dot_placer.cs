@@ -8,9 +8,13 @@ public class dot_placer : MonoBehaviour
     bool going_up = false;
     Rigidbody2D rb;
     public GameObject dot_prefab;
+    List<GameObject> dot_list;
+    Camera cam;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        dot_list = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,17 @@ public class dot_placer : MonoBehaviour
     void PlaceDot()
     {
         // place the dot
-        Instantiate(dot_prefab, transform.position, Quaternion.identity);
+        GameObject dot = Instantiate(dot_prefab, transform.position, Quaternion.identity);
+        dot_list.Add(dot);   
+    }
+
+    public void FixDotPlacement()
+    {
+        foreach (GameObject dot in dot_list)
+        {
+            GameObject text_object = dot.transform.GetChild(0).GetChild(0).gameObject;
+            text_object.transform.position = cam.WorldToScreenPoint(new Vector3(dot.transform.position.x, (dot.transform.position.y - 14.455f) / 2, 0));
+            Debug.Log("tried to fix");
+        }
     }
 }

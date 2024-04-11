@@ -321,7 +321,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 304a6871908884c40b1524187e75dec5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,7 +373,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.8018868, g: 0.38959596, b: 0.78446704, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0.882353, g: 0.6117647, b: 0.86274517, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -382,7 +382,7 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
+      ctime1: 43754
       ctime2: 12722
       ctime3: 0
       ctime4: 0
@@ -397,7 +397,7 @@ TrailRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 3
@@ -3208,6 +3208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   drag_start: {x: 0, y: 0, z: 0}
+  ball: {fileID: 86454729}
 --- !u!1 &521208111
 GameObject:
   m_ObjectHideFlags: 0

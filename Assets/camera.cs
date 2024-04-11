@@ -8,6 +8,8 @@ public class camera : MonoBehaviour
     private object_mode mode_script;
     [SerializeField] private bool dragging = false;
     [SerializeField] private Vector3 drag_start;
+    public GameObject ball;
+    dot_placer dot_script; 
 
     private Camera cam;
 
@@ -16,6 +18,7 @@ public class camera : MonoBehaviour
         mode = GameObject.Find("object_mode");
         mode_script = mode.GetComponent<object_mode>();
         cam = this.GetComponent<Camera>();
+        dot_script = ball.GetComponent<dot_placer>();
     }
 
     void Update()
@@ -31,6 +34,7 @@ public class camera : MonoBehaviour
         }
         if (dragging && mode_script.current_mode == object_mode.Modes.MoveCamera)
         {
+            dot_script.FixDotPlacement();
             Vector3 current_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.Translate(new Vector3((current_pos.x - drag_start.x) * -1, (current_pos.y - drag_start.y) * -1, (current_pos.z - drag_start.z) * -1));
         }
@@ -39,10 +43,12 @@ public class camera : MonoBehaviour
     public void ZoomIn()
     {
         cam.orthographicSize -= 0.5f;
+        dot_script.FixDotPlacement();
     }
 
     public void ZoomOut()
     {
         cam.orthographicSize += 0.5f;
+        dot_script.FixDotPlacement();
     }
 }
