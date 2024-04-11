@@ -26,6 +26,7 @@ public class drag : MonoBehaviour
         if (dragging && mode_script.current_mode == object_mode.Modes.MoveObject)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+            
         }
         if (dragging)
         {
