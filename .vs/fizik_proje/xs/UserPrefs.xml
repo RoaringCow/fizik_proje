@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{8491E2F7-5ED3-A2CF-C599-9325CC0D0FA0}|">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a7c6335a-95ac-4947-a2da-5a228dd60b41" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/object_files/drag.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="34c52b7e-eecf-4bb9-8a39-fbf91bce74fa" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/speed_controller.cs">
     <Files>
       <File FileName="Assets/time_controller.cs" />
       <File FileName="Assets/dot_placer.cs" />
-      <File FileName="Assets/dot_line.cs" Line="27" Column="1" />
+      <File FileName="Assets/dot_line.cs" />
       <File FileName="Assets/camera.cs" />
       <File FileName="Assets/Arrows.cs" />
       <File FileName="Assets/gravity_controller.cs" />
-      <File FileName="Assets/object_mode.cs" />
+      <File FileName="Assets/object_mode.cs" Line="1" Column="1" />
       <File FileName="Assets/keypad_controller.cs" />
-      <File FileName="Assets/speed_controller.cs" />
-      <File FileName="Assets/object_files/drag.cs" Line="14" Column="1" />
+      <File FileName="Assets/speed_controller.cs" Line="93" Column="1" />
+      <File FileName="Assets/object_files/drag.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,9 +27,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
 </Properties>

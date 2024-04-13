@@ -46,7 +46,7 @@ public class dot_placer : MonoBehaviour
         foreach (GameObject dot in dot_list)
         {
             GameObject text_object = dot.transform.GetChild(0).GetChild(0).gameObject;
-            text_object.transform.position = cam.WorldToScreenPoint(new Vector3(dot.transform.position.x, (dot.transform.position.y - 14.455f) / 2, 0));
+            text_object.transform.position = cam.WorldToScreenPoint(new Vector3(dot.transform.position.x, Mathf.Round((dot.transform.position.y - 0.5f) * 100f) / 100f / 2, 0));
             Debug.Log("tried to fix");
         }
     }

@@ -17,10 +17,10 @@ public class dot_line : MonoBehaviour
         ball_object = GameObject.Find("Object");
         lr = GetComponent<LineRenderer>();
         float x = ball_object.transform.position.x;
-        length_text_object.transform.position = cam.WorldToScreenPoint(new Vector3(x , (transform.position.y - 14.455f) / 2, 0));
-        length_text.text = transform.position.y + 14.455f + " birim";
+        length_text_object.transform.position = cam.WorldToScreenPoint(new Vector3(x , Mathf.Round((transform.position.y - 0.5f) * 100f) / 100f / 2, 0));
+        length_text.text = Mathf.Round((transform.position.y - 0.5f) * 100f) / 100f + " birim";
         lr.SetPosition(0, new Vector3(x, transform.position.y, 0));
-        lr.SetPosition(1, new Vector3(x, -14.455f, 0));
+        lr.SetPosition(1, new Vector3(x, 0.5f, 0));
     }
 
 }

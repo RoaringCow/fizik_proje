@@ -20,6 +20,7 @@ public class time_controller : MonoBehaviour
     {
         time_scale_text = time_scale_object.GetComponent<TMP_Text>();
         object_image = start_pause_button.GetComponent<Image>();
+
     }
 
     public void Pause_Unpause_Handler()
