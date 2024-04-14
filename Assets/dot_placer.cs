@@ -50,4 +50,13 @@ public class dot_placer : MonoBehaviour
             Debug.Log("tried to fix");
         }
     }
+
+    public void DestroyDots()
+    {
+        foreach (GameObject dot in dot_list)
+        {
+            GameObject.Destroy(dot, 0.0f);
+        }
+        dot_list.Clear();
+    }
 }

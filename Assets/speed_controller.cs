@@ -16,8 +16,8 @@ public class speed_controller : MonoBehaviour
 
 
     // Angle input
-    public GameObject angle_inputfield_object, force_inputfield_object;
-    TMP_InputField angle_inputfield, force_inputfield;
+    public GameObject angle_inputfield_object, main_speed_inputfield_object;
+    TMP_InputField angle_inputfield, main_speed_inputfield;
     //-------------------------------------------------------
 
 
@@ -40,7 +40,7 @@ public class speed_controller : MonoBehaviour
         ball_rb = ball.GetComponent<Rigidbody2D>();
 
         angle_inputfield = angle_inputfield_object.GetComponent<TMP_InputField>();
-        force_inputfield = force_inputfield_object.GetComponent<TMP_InputField>();
+        main_speed_inputfield = main_speed_inputfield_object.GetComponent<TMP_InputField>();
 
 
     }
@@ -86,7 +86,7 @@ public class speed_controller : MonoBehaviour
                 {
                     new_angle = 0f;
                 }
-                if (!float.TryParse(force_inputfield.text.Replace(",", "."), out float new_force))
+                if (!float.TryParse(main_speed_inputfield.text.Replace(",", "."), out float new_force))
                 {
                     new_force = 0f;
                 }
@@ -110,7 +110,7 @@ public class speed_controller : MonoBehaviour
                 }
 
                 angle_inputfield.text = "";
-                force_inputfield.text = "";
+                main_speed_inputfield.text = "";
                 break;
         }
     }

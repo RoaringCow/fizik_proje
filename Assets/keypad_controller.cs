@@ -9,6 +9,11 @@ public class keypad_controller : MonoBehaviour
 
     public GameObject speed_input_x_object, speed_input_y_object, gravity_input_object;
     TMP_InputField speed_input_x, speed_input_y, gravity_input;
+
+    // with angle
+    public GameObject main_speed_input_object, angle_input_object;  // no i wont fix these names
+    TMP_InputField main_speed_inputfield, angle_inputfield;
+    
     Input_mode mode = Input_mode.InputX;
     bool toggle = false;
     public GameObject keys, image;
@@ -18,6 +23,8 @@ public class keypad_controller : MonoBehaviour
         speed_input_x = speed_input_x_object.GetComponent<TMP_InputField>();
         speed_input_y = speed_input_y_object.GetComponent<TMP_InputField>();
         gravity_input = gravity_input_object.GetComponent<TMP_InputField>();
+        main_speed_inputfield = main_speed_input_object.GetComponent<TMP_InputField>();
+        angle_inputfield = angle_input_object.GetComponent<TMP_InputField>();
     }
 
 
@@ -40,6 +47,7 @@ public class keypad_controller : MonoBehaviour
     {
         switch (mode)
         {
+            // This is awful
             case Input_mode.InputX:
                 speed_input_x.text = speed_input_x.text.Remove(speed_input_x.text.Length - 1);
                 break;
@@ -48,6 +56,12 @@ public class keypad_controller : MonoBehaviour
                 break;
             case Input_mode.Gravity:
                 gravity_input.text = gravity_input.text.Remove(gravity_input.text.Length - 1);
+                break;
+            case Input_mode.MainSpeed:
+                main_speed_inputfield.text = main_speed_inputfield.text.Remove(main_speed_inputfield.text.Length - 1);
+                break;
+            case Input_mode.Angle:
+                angle_inputfield.text = angle_inputfield.text.Remove(angle_inputfield.text.Length - 1);
                 break;
         }
     }
@@ -64,6 +78,12 @@ public class keypad_controller : MonoBehaviour
             case Input_mode.Gravity:
                 gravity_input.text += input;
                 break;
+            case Input_mode.MainSpeed:
+                main_speed_inputfield.text += input;
+                break;
+            case Input_mode.Angle:
+                angle_inputfield.text += input;
+                break;
         }
 
     }
@@ -79,6 +99,14 @@ public class keypad_controller : MonoBehaviour
     public void Select_GravityInput()
     {
         mode = Input_mode.Gravity;
+    }
+    public void Select_MainSpeed()
+    {
+        mode = Input_mode.MainSpeed;
+    }
+    public void Select_Angle()
+    {
+        mode = Input_mode.Angle;
     }
     public void Input_Negative()
     {
@@ -132,7 +160,9 @@ public class keypad_controller : MonoBehaviour
     {
         InputX,
         InputY,
-        Gravity
+        Gravity,
+        Angle,
+        MainSpeed,
     }
 
 }

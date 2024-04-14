@@ -23,6 +23,16 @@ public class time_controller : MonoBehaviour
 
     }
 
+    public void ResetTime()
+    {
+        old_time_scale = 0.0f;
+        paused_time_changed = false;
+        paused_time_scale_change = 0.0f;
+        Time.timeScale = 1.0f;
+        UpdateTimeText();
+
+    }
+
     public void Pause_Unpause_Handler()
     {
         switch (paused)
@@ -37,11 +47,17 @@ public class time_controller : MonoBehaviour
         }
     }
 
+    void UpdateTimeText()
+    {
+        time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
+    }
+
+
     void Pause()
     {
         old_time_scale = Time.timeScale;
         Time.timeScale = 0.0f;
-        time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
+        UpdateTimeText();
         paused = true;
         object_image.sprite = unpause_texture;
         paused_time_scale_change = 0.0f;
@@ -58,7 +74,7 @@ public class time_controller : MonoBehaviour
         {
             Time.timeScale = old_time_scale;
         }
-        time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
+        UpdateTimeText();
 
     }
 
@@ -75,7 +91,7 @@ public class time_controller : MonoBehaviour
             case false:
                 // unity already prevents negative values.
                 Time.timeScale -= 0.1f;
-                time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
+                UpdateTimeText();
                 break;
         }
     }
@@ -91,7 +107,7 @@ public class time_controller : MonoBehaviour
 
             case false:
                 Time.timeScale += 0.1f;
-                time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
+                UpdateTimeText();
                 break;
         }
     }
