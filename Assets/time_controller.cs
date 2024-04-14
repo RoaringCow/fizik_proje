@@ -41,7 +41,7 @@ public class time_controller : MonoBehaviour
     {
         old_time_scale = Time.timeScale;
         Time.timeScale = 0.0f;
-        time_scale_text.text = "Time scale: " + Time.timeScale;
+        time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
         paused = true;
         object_image.sprite = unpause_texture;
         paused_time_scale_change = 0.0f;
@@ -58,7 +58,7 @@ public class time_controller : MonoBehaviour
         {
             Time.timeScale = old_time_scale;
         }
-        time_scale_text.text = "Time scale: " + Time.timeScale;
+        time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
 
     }
 
@@ -75,7 +75,7 @@ public class time_controller : MonoBehaviour
             case false:
                 // unity already prevents negative values.
                 Time.timeScale -= 0.1f;
-                time_scale_text.text = "Time scale: " + Time.timeScale;
+                time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
                 break;
         }
     }
@@ -91,7 +91,7 @@ public class time_controller : MonoBehaviour
 
             case false:
                 Time.timeScale += 0.1f;
-                time_scale_text.text = "Time scale: " + Time.timeScale;
+                time_scale_text.text = "Time scale: " + Mathf.Round(Time.timeScale * 10) * 0.1f;
                 break;
         }
     }
