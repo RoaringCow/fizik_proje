@@ -10,7 +10,7 @@ public class reset : MonoBehaviour
     dot_placer dot_script;
     TrailRenderer ball_trail;
 
-    GameObject camera;
+    GameObject cam;
 
     GameObject time_control_object;
     time_controller time_control_script;
@@ -25,7 +25,7 @@ public class reset : MonoBehaviour
     void Start()
     {
         ball = GameObject.Find("Object");
-        camera = GameObject.Find("Main Camera");
+        cam = GameObject.Find("Main Camera");
         time_control_object = GameObject.Find("time_control");
         gravity_control_object = GameObject.Find("gravity_contol_ui");
 
@@ -40,7 +40,7 @@ public class reset : MonoBehaviour
 
         // Save the start position
         object_start = ball.transform.position;
-        camera_start = camera.transform.position;
+        camera_start = cam.transform.position;
     }
 
     public void GameReset()
@@ -50,7 +50,7 @@ public class reset : MonoBehaviour
 
         // Move them to the start position
         ball.transform.position = object_start;
-        camera.transform.position = camera_start;
+        cam.transform.position = camera_start;
 
         // Reset the velocity of the object
         rb.velocity = Vector3.zero;
