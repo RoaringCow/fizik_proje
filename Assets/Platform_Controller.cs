@@ -6,7 +6,7 @@ using TMPro;
 public class Platform_Controller : MonoBehaviour
 {
     public GameObject platform,Label;
-    public TMP_Text label_text;
+    TMP_Text label_text;
     public Transform ray_origin;
     public BoxCollider2D boxCollider;
     public SpriteRenderer spriteRenderer;
@@ -15,6 +15,7 @@ public class Platform_Controller : MonoBehaviour
     public float platform_height;
     void Start()
     {
+        label_text = Label.GetComponent<TMP_Text>();
         PlatformModeChange(false);
     }
 
@@ -26,7 +27,7 @@ public class Platform_Controller : MonoBehaviour
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
         platform_height = ray_origin.position.y;
-        label_text.text = "Platform Yüksekliði:" + (Mathf.Round(platform_height * 10.0f) * 0.1f);
+        label_text.text = "Platform Yï¿½ksekliï¿½i:" + (Mathf.Round(platform_height * 10.0f) * 0.1f);
     }
     public void PlatformModeChange(bool tog)
     {
