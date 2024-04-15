@@ -7303,12 +7303,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1020091031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 737ae5c79380aac48b6ac8334cc94c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: bb8697cc653134b219db4c8f4b1d5f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 1020091031}
-  Label: {fileID: 0}
-  label_text: {fileID: 1979631602}
+  Label: {fileID: 1979631601}
   ray_origin: {fileID: 2048573200}
   boxCollider: {fileID: 1020091033}
   spriteRenderer: {fileID: 1020091034}
@@ -8558,7 +8557,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1154308872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f9ab921a017647ec905bfd626464402, type: 3}
+  m_Script: {fileID: 11500000, guid: 951d2117535704f2eb2de720a522091a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1154308875
@@ -8637,7 +8636,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cc1cf5a044137476f9cb5a8a9b3a121f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 997376d53b08243e69ff86aa4078d6cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
