@@ -13,10 +13,12 @@ public class Platform_Controller : MonoBehaviour
     private bool platform_moving = false;
     private Vector3 offset;
     public float platform_height;
+    Vector3 start_pos;
     void Start()
     {
         label_text = Label.GetComponent<TMP_Text>();
         PlatformModeChange(false);
+        start_pos = transform.position;
     }
 
     void Update()
@@ -26,8 +28,7 @@ public class Platform_Controller : MonoBehaviour
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
-        platform_height = ray_origin.position.y;
-        label_text.text = "Platform Y�ksekli�i:" + (Mathf.Round(platform_height * 10.0f) * 0.1f);
+        label_text.text = "Platform Yüksekliği:" + (Mathf.Floor(ray_origin.position.y));
     }
     public void PlatformModeChange(bool tog)
     {
@@ -39,6 +40,11 @@ public class Platform_Controller : MonoBehaviour
         {
             PlatformOff();
         }
+    }
+    public void ResetPosition()
+    {
+        transform.position = start_pos;
+        label_text.text = "Platform Yüksekliği:" + (Mathf.Floor(ray_origin.position.y));
     }
     void PlatformOn()
     {
@@ -58,5 +64,7 @@ public class Platform_Controller : MonoBehaviour
     private void OnMouseUp()
     {
         platform_moving = false;
+        transform.position = new Vector3(transform.position.x, Mathf.Floor(ray_origin.position.y), 0);
+        label_text.text = "Platform Yüksekliği:" + (Mathf.Floor(ray_origin.position.y));
     }
 }
