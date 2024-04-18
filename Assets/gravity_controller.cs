@@ -22,7 +22,7 @@ public class gravity_controller : MonoBehaviour
 
     public void SetGravity()
     {
-        float new_value = float.Parse(gravity_input.text.Replace(",", "."));
+        float new_value = float.Parse(gravity_input.text);
         Physics2D.gravity = new Vector2(0, -1 * new_value);
         UpdateGravityText();
     }

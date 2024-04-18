@@ -13,6 +13,7 @@ public class Platform_Controller : MonoBehaviour
     private bool platform_moving = false;
     private Vector3 offset;
     public float platform_height;
+    private Vector3 mouse_pos;
     void Start()
     {
         PlatformModeChange(false);
@@ -23,6 +24,7 @@ public class Platform_Controller : MonoBehaviour
         
         if(platform_moving)
         {
+            mouse_pos = new (Mathf.Round(Input.mousePosition.x * 10) * 0.1f, Input.mousePosition.y,Input.mousePosition.z);
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
         platform_height = ray_origin.position.y;
