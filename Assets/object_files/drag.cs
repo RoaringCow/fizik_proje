@@ -8,7 +8,7 @@ public class drag : MonoBehaviour
 
     private GameObject mode;
     private object_mode mode_script;
-    private bool dragging = false;
+    public bool dragging = false;
     private Vector3 offset;
     public Rigidbody2D rb;
 
