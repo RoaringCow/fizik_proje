@@ -38,6 +38,7 @@ public class drag : MonoBehaviour
     {
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         dragging = true;
+
     }
 
     private void OnMouseUp()
