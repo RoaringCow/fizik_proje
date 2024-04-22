@@ -9,8 +9,8 @@ public class camera : MonoBehaviour
     [SerializeField] private bool dragging = false;
     [SerializeField] private Vector3 drag_start;
     public GameObject ball;
-    dot_placer dot_script; 
-
+    dot_placer dot_script;
+    float start_zoom;
     private Camera cam;
 
     void Start()
@@ -19,6 +19,7 @@ public class camera : MonoBehaviour
         mode_script = mode.GetComponent<object_mode>();
         cam = this.GetComponent<Camera>();
         dot_script = ball.GetComponent<dot_placer>();
+        start_zoom = cam.orthographicSize;
     }
 
     void Update()
@@ -40,6 +41,10 @@ public class camera : MonoBehaviour
         }
     }
 
+    public void ResetZoom()
+    {
+        cam.orthographicSize = start_zoom;
+    }
     public void ZoomIn()
     {
         cam.orthographicSize -= 0.5f;

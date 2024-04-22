@@ -16,7 +16,6 @@ sysinfo.txt
 ProjectSettings
 UserSettings
 Logs
-Assets/Old
 Assembly-CSharp.csproj.DotSettings
 ###
 # VS/MD solution and project files
@@ -32,7 +31,6 @@ Assembly-CSharp.csproj.DotSettings
 *.userprefs
 *.pidb
 .DS_Store
-*.meta
 ###
 # OS generated
 ###

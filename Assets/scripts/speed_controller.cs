@@ -30,6 +30,14 @@ public class speed_controller : MonoBehaviour
 
     public add_set_select add_set_state = add_set_select.Add;
     public speed_control_select speed_control_state = speed_control_select.XY_Values;
+
+    Vector3 start_position;
+    Vector3 end_position;
+    LineRenderer distance_line;
+
+    // to draw a line after it falls
+    bool tracking_start;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +50,7 @@ public class speed_controller : MonoBehaviour
         angle_inputfield = angle_inputfield_object.GetComponent<TMP_InputField>();
         main_speed_inputfield = main_speed_inputfield_object.GetComponent<TMP_InputField>();
 
-
+        distance_line = ball.GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -54,6 +62,7 @@ public class speed_controller : MonoBehaviour
 
     public void SubmitSpeed()
     {
+        start_position = transform.position;
         switch (speed_control_state)
         {
             case speed_control_select.XY_Values:
@@ -146,6 +155,14 @@ public class speed_controller : MonoBehaviour
     {
         Angle,
         XY_Values,
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        end_position = transform.position;
+        distance_line.SetPosition(0, start_position);
+        distance_line.SetPosition(1, new Vector3(end_position.x, start_position.y, start_position.z));
+        Debug.Log("asd");
     }
 
 }
